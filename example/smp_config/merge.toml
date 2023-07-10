@@ -1,0 +1,14 @@
+output = '{config_root}/resources.zip'
+exclude = ['*__MACOSX*', '*.DS_Store*']
+
+[[sources]]
+type = 'dir'
+path = '{config_root}/include/'
+
+[[sources]]
+type = 'url'
+url = 'https://static.planetminecraft.com/files/resource_media/resourcepack/hm-ravens-resourcepack-v1.zip'
+
+[[sources]]
+type = 'url'
+url = 'https://static.planetminecraft.com/files/resource_media/resourcepack/bhex-s-vertical-slabs-1-20-resources.zip'

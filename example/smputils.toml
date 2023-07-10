@@ -1,0 +1,25 @@
+[globals]
+config_root = '{config_root}/smp_config'
+
+[imports]
+merge_resource = '{script_root}/merge_resource.py'
+configure_server = '{script_root}/configure_server.py'
+fetch = '{script_root}/fetch.py'
+
+[[tasks]]
+action = 'merge_resource'
+config = '{config_root}/merge.toml'
+
+[[tasks]]
+action = 'configure_server'
+
+[tasks.deps]
+merge = 'merge_resource'
+
+[[tasks]]
+action = 'fetch'
+config = '{config_root}/datapack.toml'
+
+[[tasks]]
+action = 'fetch'
+config = '{config_root}/plugins.toml'

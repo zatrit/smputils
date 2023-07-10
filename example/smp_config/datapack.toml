@@ -1,0 +1,29 @@
+target_dir = './world/datapacks/'
+
+[[files]]
+type = 'url'
+url = 'https://static.planetminecraft.com/files/resource_media/datapack/recinber-s-custom-portals.zip'
+
+[[files]]
+type = 'url'
+url = 'https://mc.kawamood.com/datapacks/PK_Racks/PK_Racks_V.2.2.0.zip'
+
+[[files]]
+type = 'url'
+url = 'https://static.planetminecraft.com/files/resource_media/datapack/banner-bedsheets-v1.zip'
+
+[[files]]
+type = 'url'
+url = 'https://static.planetminecraft.com/files/resource_media/datapack/invisibleitemframes-v2-2-1.zip'
+
+[[files]]
+type = 'url'
+url = 'https://static.planetminecraft.com/files/resource_media/datapack/moarparticles-1-20.zip'
+
+[[files]]
+type = 'url'
+url = 'https://static.planetminecraft.com/files/resource_media/datapack/bhex-s-vertical-slabs-1-1.zip'
+
+[[files]]
+type = 'url'
+url = 'https://static.planetminecraft.com/files/resource_media/datapack/hm-ravens-datapack-v1.zip'

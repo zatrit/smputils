@@ -1,0 +1,31 @@
+target_dir = './plugins/'
+
+# Plasmo Voice
+[[files]]
+type = 'spiget'
+resource_id = 91064
+filename = 'plasmo-voice.jar'
+
+# SinglePlayerSleep
+[[files]]
+type = 'spiget'
+resource_id = 68139
+filename = 'single-player-sleep.jar'
+
+# HeadDrops
+[[files]]
+type = 'spiget'
+resource_id = 15964
+filename = 'head-drops.jar'
+
+# SkinsRestorer
+[[files]]
+type = 'spiget'
+resource_id = 2124
+filename = 'skins-restorer.jar'
+
+# Chunky
+[[files]]
+type = 'spiget'
+resource_id = 81534
+filename = 'chunky.jar'
