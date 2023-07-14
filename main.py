@@ -18,12 +18,13 @@ def main():
 
     args = parser.parse_args()
     config.init(__file__)
-    config = config.parse_config(args.config)
+    _config = config.parse_config(args.config)
 
     try:
-        run_config(config, args.tasks)
+        run_config(_config, args.tasks)
     except AssertionError as err:
         print(err)
 
-if  __name__ == '__main__':
+
+if __name__ == '__main__':
     main()

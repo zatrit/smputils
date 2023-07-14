@@ -1,5 +1,6 @@
 [globals]
 config_root = '{config_root}/smp_config'
+server_root = './'
 
 [imports]
 merge_resource = '{script_root}/merge_resource.py'
@@ -7,19 +8,25 @@ configure_server = '{script_root}/configure_server.py'
 fetch = '{script_root}/fetch.py'
 
 [[tasks]]
+action = 'create_tmpdir'
+force_index = 0
+config = { store_global = 'server_root' }
+
+[[tasks]]
 action = 'merge_resource'
 config = '{config_root}/merge.toml'
 
 [[tasks]]
 action = 'configure_server'
-
-[tasks.deps]
-merge = 'merge_resource'
+deps = { merge = 'merge_resource' }
+config = '{config_root}/configure_server.toml'
 
 [[tasks]]
+name = 'datapacks'
 action = 'fetch'
 config = '{config_root}/datapack.toml'
 
 [[tasks]]
+name = 'plugins'
 action = 'fetch'
 config = '{config_root}/plugins.toml'

@@ -1,4 +1,4 @@
-target_dir = './world/datapacks/'
+target_dir = '{server_root}/world/datapacks/'
 
 [[files]]
 type = 'url'

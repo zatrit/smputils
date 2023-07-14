@@ -22,18 +22,20 @@ def run_config(config: dict, tasks: list = []):
 
     for name, task in tasks_dict.items():
         action = task['action']
+        force_index = task.get('force_index', -1)
 
         if tasks_set and (name not in tasks_set):
             continue
 
         action = actions[action]
-        config = parse_config(task.get('config', {}))
-        config_tasks.append(Task(name, action, task['deps'], config))
+        config_tasks.append(
+            Task(name, action, task['deps'],
+                 task.get('config', {}), force_index))
 
     run_tasks(config_tasks)
 
 
-def task_deps(task: str, tasks: dict, target = set()):
+def task_deps(task: str, tasks: dict, target=set()):
     target.add(task)
     for dep in tasks[task]['deps'].values():
         task_deps(dep, tasks, target)

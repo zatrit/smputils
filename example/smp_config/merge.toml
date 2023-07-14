@@ -1,4 +1,4 @@
-output = '{config_root}/resources.zip'
+output = 'resources.zip'
 exclude = ['*__MACOSX*', '*.DS_Store*']
 
 [[sources]]

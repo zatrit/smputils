@@ -37,4 +37,5 @@ def fill_vars(target, vars: dict):
 
 def init(main_path):
     from os.path import pardir, join, abspath
+
     config_globals['script_root'] = abspath(join(main_path, pardir))

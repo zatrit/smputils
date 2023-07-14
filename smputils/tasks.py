@@ -1,6 +1,8 @@
 from dataclasses import dataclass
 from typing import Callable, Any
 
+from smputils.config import ConfigDef, parse_config
+
 TaskFunc = Callable[[dict, dict], Any]
 
 
@@ -16,7 +18,8 @@ class Task:
     name: str
     action: TaskAction
     deps: dict[str, str]
-    config: dict
+    config: ConfigDef
+    force_index: int
 
 
 actions: dict[str, TaskAction] = {}
@@ -56,7 +59,13 @@ def kahn(graph: dict) -> list:
 def run_tasks(tasks: list[Task]):
     graph = {t.name: list(t.deps.values()) for t in tasks}
     order = list(reversed(kahn(graph)))
-    tasks = sorted(tasks, key=lambda t: order.index(t.name))
+    tasks.sort(key=lambda t: order.index(t.name))
+
+    for task in tasks:
+        if task.force_index != -1:
+            tasks.remove(task)
+            tasks.insert(task.force_index, task)
+
     result = {}
 
     for task in tasks:
@@ -75,4 +84,5 @@ def run_tasks(tasks: list[Task]):
             assert isinstance(
                 value, dep_type), f'{key} must be instance of {dep_type.__name__}'
 
-        result[task.name] = action.func(task.config, deps_input)
+        config = parse_config(task.config)
+        result[task.name] = action.func(config, deps_input)

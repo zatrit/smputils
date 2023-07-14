@@ -1,10 +1,12 @@
-target_dir = './plugins/'
+# An example plugins configuration file
 
-# Plasmo Voice
+target_dir = '{server_root}/plugins/'
+
+# Simple Voice Chat
 [[files]]
 type = 'spiget'
-resource_id = 91064
-filename = 'plasmo-voice.jar'
+resource_id = 93738
+filename = 'simple-voice-chat.jar'
 
 # SinglePlayerSleep
 [[files]]
@@ -12,11 +14,17 @@ type = 'spiget'
 resource_id = 68139
 filename = 'single-player-sleep.jar'
 
-# HeadDrops
+# YetAnotherHeads
+[[files]]
+type = 'url'
+url = 'https://github.com/zatrit/yah/releases/download/1.0/yah-1.0-SNAPSHOT.jar'
+filename = 'yah.jar'
+
+# GSit
 [[files]]
 type = 'spiget'
-resource_id = 15964
-filename = 'head-drops.jar'
+resource_id = 62325
+filename = 'gsit.jar'
 
 # SkinsRestorer
 [[files]]
